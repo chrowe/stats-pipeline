@@ -24,7 +24,7 @@ spec:
         # -bucket directory.
         args:
           - -prometheusx.listen-address=:9990
-          - -exporter.query-workers=1
+          - -exporter.query-workers=2
           - -config=/etc/annotation-export/config-annotation-export.json
           - -export=annotation
           - -output=local
@@ -64,11 +64,11 @@ spec:
           - -datatype=annotation
           - -directory=/var/spool/ndt
           - -node_name=third-party
-          - -archive_size_threshold=20MB
+          - -archive_size_threshold=5MB
           - -max_file_age=10m               # No need to wait after writing to upload a file (default 1h).
-          - -archive_wait_time_min=15m      # (default 30m0s)
-          - -archive_wait_time_expected=30m # (default 1h0m0s)
-          - -archive_wait_time_max=1h       # (default 2h0m0s)
+          - -archive_wait_time_min=10m      # (default 30m0s)
+          - -archive_wait_time_expected=20m # (default 1h0m0s)
+          - -archive_wait_time_max=30m      # (default 2h0m0s)
           - -sigterm_wait_time=60s
           - -metadata=MLAB.server.name=data-processing
           - -metadata=MLAB.experiment.name=ndt
