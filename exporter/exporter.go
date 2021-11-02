@@ -265,6 +265,7 @@ func (exporter *JSONExporter) Export(ctx context.Context,
 		err = queryTpl.Execute(&buf, map[string]string{
 			"sourceTable": sourceTable,
 			"partitionID": v,
+			"project":     exporter.projectID,
 		})
 		if err != nil {
 			log.Print(err)
